@@ -15,12 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from views import home
+from views import GeneratePDF
 
 urlpatterns = [
     url(
-        regex = '^$',
-        view = home,
+        regex = '^pdf/$',
+        view = GeneratePDF.as_view(),
         name= 'home'
     ),
 ]
