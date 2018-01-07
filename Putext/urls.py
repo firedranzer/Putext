@@ -26,7 +26,7 @@ urlpatterns = [
     ),
     url(
         regex = '^$',
-        view = home,
+        view = home.as_view(),
         name= 'home'
     )
 ]
