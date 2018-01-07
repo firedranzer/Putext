@@ -9,11 +9,11 @@ from home.models import Post
 
 class home(TemplateView):
     template_name = 'forms.html'
-    template_name2 = 'final_pdf.html'
+
+    #Method to create the html form
     def get(self, request):
         form = textForm()
-        posts = Post.objects.all()[::-6]
-        args = {'form' : form, 'posts': posts}
+        args = {'form' : form }
         return render(request, self.template_name, args)
 
 

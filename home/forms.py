@@ -4,8 +4,10 @@ from home.models import Post
 
 
 class textForm(forms.ModelForm):
-    text_input = forms.CharField()
+    title = forms.CharField()
+    text = forms.CharField()
+
     
     class Meta:
         model = Post
-        fields = ('text_input', )
+        fields = ('title', 'text',)
