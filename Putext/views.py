@@ -9,8 +9,7 @@ from home.models import Post
 
 
 class GeneratePDF(View):
-    posts = Post.objects.all()
-    template_name = 'final_pdf.html'
+    #template_name = 'final_pdf.html'
     def get(self, request, *args, **kwargs):
         template = get_template('final_pdf.html')
         #context = {
@@ -20,14 +19,8 @@ class GeneratePDF(View):
         #    "today": "Today",
         #}
         #html = template.render(Post)
-        pdf = render_to_pdf('final_pdf.html', {'Post':Post})
+        posts = Post.objects.all()
+        pdf = render_to_pdf('final_pdf.html', {'posts':posts})
         return HttpResponse(pdf, content_type = 'application/pdf')
 
-    def post(self, request):
-        form = textForm(request.POST)
-        if form.is_valid():
-            text = form.cleaned_data['text_input']
-        
-        args = { 'form': form, 'text': text}
-        pdf = render_to_pdf(self.template_name, args)
 
