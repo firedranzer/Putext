@@ -9,18 +9,7 @@ from home.models import Post
 
 
 class GeneratePDF(View):
-    #template_name = 'final_pdf.html'
     def get(self, request, *args, **kwargs):
-        template = get_template('final_pdf.html')
-        #context = {
-        #    "invoice_id": 123,
-        #    "customer_name": "Rupesh Harode",
-        #    "amount": 1399.99,
-        #    "today": "Today",
-        #}
-        #html = template.render(Post)
-        post = Post.objects.all()[0]
+        post = Post.objects.reverse()[0]
         pdf = render_to_pdf('final_pdf.html', {'post':post})
         return HttpResponse(pdf, content_type = 'application/pdf')
-
-
