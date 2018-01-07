@@ -19,8 +19,8 @@ class GeneratePDF(View):
         #    "today": "Today",
         #}
         #html = template.render(Post)
-        posts = Post.objects.all()
-        pdf = render_to_pdf('final_pdf.html', {'posts':posts})
+        post = Post.objects.reverse()[0]
+        pdf = render_to_pdf('final_pdf.html', {'post':post})
         return HttpResponse(pdf, content_type = 'application/pdf')
 
 
