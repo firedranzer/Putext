@@ -15,11 +15,7 @@
       {% csrf_token %}
       {{ form.as_p }}    
       <input type="submit" value="submit" /> 
-    </form>
-    <h1>{{ text }}</h1>      
-    {% for post in posts %}
-      <h1>{{ post.text_input }}</h1>
-    {% endfor %}
+    </form>      
 </div>
 
 </body>

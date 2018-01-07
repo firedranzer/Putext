@@ -24,7 +24,9 @@ class home(TemplateView):
             post_new = form.save(commit=False)
             post_new.save()
 
-            text = form.cleaned_data['text_input']
+            title_new = form.cleaned_data['title']
+            text_new = form.cleaned_data['text']
             form = textForm()
-        pdf = render_to_pdf('final_pdf.html', {'text': text})
+        args = { 'text':text_new, 'title':title_new}
+        pdf = render_to_pdf('final_pdf.html', args)
         return HttpResponse(pdf, content_type = 'application/pdf')
