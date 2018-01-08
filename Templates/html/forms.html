@@ -12,15 +12,15 @@
   
 </head>
 <body>
-<div class="jumbotron"> 
-  <div class="container">
-      <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}    
-        <input type="submit" value="Convert to pdf" class="btn btn-success"/> 
-      </form>      
+  <div class="bg-contact2" style="background-image: url('images/bg-01.jpg');">
+    <div class="container">
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}    
+          <input type="submit" value="Convert to pdf" class="btn btn-success"/> 
+        </form>      
+    </div>
   </div>
-</div>
 <footer><center><h3>Made with Love by Rupesh Harode</h3></center></h1></footer>
 <!-- Bootstrap JS and JQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
