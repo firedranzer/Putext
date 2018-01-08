@@ -1,4 +1,5 @@
 from django.conf.urls import url
+from django.urls import path
 from django.contrib import admin
 
 from home.views import home
@@ -15,4 +16,5 @@ urlpatterns = [
         view = home.as_view(),
         name = 'home'
     ),
+    path('admin/', admin.site.urls),
 ]

@@ -9,14 +9,15 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-  
-<div class="container">
-    <form method="POST">
-      {% csrf_token %}
-      {{ form.as_p }}    
-      <input type="submit" value="Convert to pdf" class="btn btn-success"/> 
-    </form>      
+<div class="jumbotron"> 
+  <div class="container">
+      <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}    
+        <input type="submit" value="Convert to pdf" class="btn btn-success"/> 
+      </form>      
+  </div>
 </div>
-
+<footer><center><h3>Made with Love by Rupesh Harode</h3></center></h1></footer>
 </body>
 </html>
