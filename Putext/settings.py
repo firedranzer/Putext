@@ -55,7 +55,7 @@ ROOT_URLCONF = 'Putext.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'Templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'Templates/html')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
